@@ -14,7 +14,7 @@ async function main() {
     const SimpleContract = await hre.ethers.getContractFactory("SimpleContract");
 
     // Deploy the contract with the initial count
-    const simpleContract = await SimpleContract.deploy(initialCount);
+    const simpleContract = await SimpleContract.deploy();
 
     // Wait for the contract to be deployed
     await simpleContract.deployed();
