@@ -8,7 +8,7 @@ export default function SimpleContractApp() {
     const [simpleContract, setSimpleContract] = useState(undefined);
     const [count, setCount] = useState(undefined);
 
-    const contractAddress = "YOUR_DEPLOYED_CONTRACT_ADDRESS"; // Replace with your contract's address
+    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; //contract address needs to be correct
     const contractABI = simpleContractAbi.abi;
 
     const getWallet = async () => {
@@ -64,11 +64,15 @@ export default function SimpleContractApp() {
         }
     };
 
-    const resetCount = async () => {
+    const decrementCount = async () => {
         if (simpleContract) {
-            const tx = await simpleContract.resetCount();
-            await tx.wait();
-            getCount();
+            try {
+                const tx = await simpleContract.decrementCount();
+                await tx.wait();
+                getCount();
+            } catch (error) {
+                console.error("Error in decrementing count:", error);
+            }
         }
     };
 
@@ -90,7 +94,7 @@ export default function SimpleContractApp() {
                 <p>Your Account: {account}</p>
                 <p>Current Count: {count}</p>
                 <button onClick={incrementCount}>Increment Count</button>
-                <button onClick={resetCount}>Reset Count</button>
+                <button onClick={decrementCount}>Decrement Count</button>
             </div>
         );
     };
