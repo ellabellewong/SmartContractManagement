@@ -106,7 +106,7 @@ export default function SimpleContractApp() {
     return (
         <main className="container">
             <header>
-                <h1>Simple Contract Interaction</h1>
+                <h1>Smart Contract Management</h1>
                 <h2>Ella Belle G. Wong</h2>
             </header>
             {initUser()}
