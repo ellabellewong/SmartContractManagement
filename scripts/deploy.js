@@ -9,6 +9,7 @@ const hre = require("hardhat");
 async function main() {
     // Initial value for the contract's count
     const initialCount = 0;
+    const initMessage = "Hello, Blockchain!";
 
     // Get the contract factory
     const SimpleContract = await hre.ethers.getContractFactory("SimpleContract");
