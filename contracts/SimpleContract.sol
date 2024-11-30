@@ -15,11 +15,6 @@ contract SimpleContract {
         owner = payable(msg.sender); // Initialize the owner to the deployer's address
     }
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can call this function");
-        _;
-    }
-
     function incrementCount() public {
         count++;
         if (count % 2 == 0) {
@@ -44,7 +39,7 @@ contract SimpleContract {
         return owner;
     }
 
-    function setMessage(string memory newMessage) public onlyOwner {
+    function setMessage(string memory newMessage) public {
         message = newMessage;
         emit MessageChanged(newMessage);
     }
