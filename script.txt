@@ -1,0 +1,35 @@
+Good day! i am ella belle g. wong, my email is at 202110616@fit.edu.ph and i am from FEU institute of technology. today i will be showing you the Solidity contract that i made that defines a simple counter with functions to increment, decrement, and retrieve its value. The frontend interacts with this contract using MetaMask, allowing users to connect their wallets, read the current count, and modify it through the provided buttons
+
+lets start with the solidity contract:
+State Variable: count - A public unsigned integer to store the current count.
+Constructor: Initializes count to 0.
+Functions:
+incrementCount(): Increments count by 1.
+decrementCount(): Decrements count by 1, ensuring it doesn't go below 0.
+getCount(): Returns the current value of count.
+
+and next, with the frontend called index.js: State Variables:
+ethWallet: Stores the MetaMask wallet object.
+account: Stores the connected account address.
+simpleContract: Stores the contract instance.
+count: Stores the current count from the contract.
+
+Functions:
+getWallet(): Checks for MetaMask and requests account connection.
+handleAccount(): Updates the account state with the connected account.
+connectAccount(): Connects the MetaMask wallet and gets the contract instance.
+getSimpleContract(): Creates a contract instance using the provider and signer.
+getCount(): Fetches the current count from the contract and updates the state.
+incrementCount(): Calls the incrementCount() function on the contract and updates the state.
+decrementCount(): Calls the decrementCount() function on the contract and updates the state, handling potential errors.
+initUser(): Renders the appropriate UI based on the connection status and count.
+
+the code works since the contract stores a counter on the blockchain, and the frontend interacts with this contract to display the current count and allows users to modify it through button clicks, with the changes being reflected on the blockchain.
+
+now let's try to see if our functions are working well. i already did the necessary steps in order for us to run the code smoothly
+
+as we can see we will connect first with a metamask wallet, and since i already have one, i will connect it.
+
+then we will be able to go inside the wallet and see the wallet address, the buttons and the counter here. when we click the increment, the transaction will go through the wallet and after confirming, the counter will be added. same with the decrement.
+
+thank you so much for listening!
