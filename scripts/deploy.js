@@ -23,6 +23,15 @@ async function main() {
     console.log(
         `SimpleContract deployed with initial count of ${initialCount} to address: ${simpleContract.address}`
     );
+    // Set an initial message
+    const setMessageTx = await simpleContract.setMessage(initMessage);
+
+    // Wait for the transaction to be mined
+    await setMessageTx.wait();
+
+    // Log the message to confirm it was set
+    const currentMessage = await simpleContract.getMessage();
+    console.log(`Message set to: ${currentMessage}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
