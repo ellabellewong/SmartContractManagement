@@ -12,7 +12,7 @@ contract SimpleContract {
     constructor() {
         count = 0;
         tokenBalance = 0;
-        owner = payable(msg.sender); // Initialize the owner to the deployer's address
+        owner = msg.sender; // Initialize the owner to the deployer's address
     }
 
     function incrementCount() public {
